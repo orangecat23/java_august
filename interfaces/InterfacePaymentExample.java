@@ -1,17 +1,19 @@
-package Payment;
+package interfaces;
 
 import java.util.Scanner;
 
-abstract class Payment {
+// Payment interface
 
-    public abstract void processPayment(double amount);
+interface Payment {
 
-    public abstract void generateReceipt();
+    void processPayment(double amount);
+
+    void generateReceipt();
 }
 
-// Derived class: Credit Card Payment
+// Credit Card Payment Implementation
 
-class CreditCardPayment extends Payment {
+class CreditCardPayment implements Payment {
 
     private final String cardNumber;
 
@@ -31,9 +33,9 @@ class CreditCardPayment extends Payment {
     }
 }
 
-// Derived class: UPI Payment
+// UPI Payment Implementation
 
-class UpiPayment extends Payment {
+class UpiPayment implements Payment {
 
     private final String upiId;
 
@@ -53,9 +55,9 @@ class UpiPayment extends Payment {
     }
 }
 
-// Derived class: Net Banking Payment
+// Net Banking Payment Implementation
 
-class NetBankingPayment extends Payment {
+class NetBankingPayment implements Payment {
 
     private final String userId;
 
@@ -75,7 +77,7 @@ class NetBankingPayment extends Payment {
     }
 }
 
-// Service class that uses abstraction
+// Service class
 
 class PaymentService {
 
@@ -93,7 +95,7 @@ class PaymentService {
 
 // Main class
 
-public class AbstractionUsingAbstractClassEx {
+public class InterfacePaymentExample {
 
     public static void main(String[] args) {
 
@@ -110,7 +112,7 @@ public class AbstractionUsingAbstractClassEx {
         System.out.print("Enter Amount: ");
         double amount = scanner.nextDouble();
 
-        // Consume the leftover newline
+        // Consume leftover newline
         scanner.nextLine();
 
         Payment payment;
