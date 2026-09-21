@@ -1,11 +1,13 @@
-package collections.arrayList;
+package collections.vector;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Vector;
 
-public class ArrayLEx {
+public class VectorEx {
+
     public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
+        Vector<String> names = new Vector<>();
         names.add("Tanaya");
         names.add("Ram");
         names.add("Lakshman");
@@ -37,6 +39,14 @@ public class ArrayLEx {
             System.out.println(num);
         }
 
+        // Enumeration
+        Enumeration<String> elements = names.elements();
+
+        while (elements.hasMoreElements()) {
+            String name = elements.nextElement();
+            System.out.println(name);
+        }
+
         // ArrayList<String> names2 = new ArrayList<>();
         // names2.add("Ganpati");
         // names2.addAll(names);
@@ -44,8 +54,6 @@ public class ArrayLEx {
         // System.out.println(names.removeAll(names2));
         // System.out.println(names);
 
-        Object[] arr = names.toArray();
-        System.out.println(Arrays.toString(arr));
-
     }
+
 }
