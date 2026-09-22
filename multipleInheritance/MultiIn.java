@@ -1,4 +1,4 @@
-package multin;
+package multipleInheritance;
 
 interface AccountOperations {
     void deposit(double amount);
